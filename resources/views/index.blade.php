@@ -35,7 +35,7 @@
         <a class="nav-link" id="account-detail-tab" data-bs-toggle="tab" href="#account-detail" role="tab" aria-controls="account-detail" aria-selected="true"><i class="fi-rs-user mr-10"></i>Account details</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="page-login.html"><i class="fi-rs-sign-out mr-10"></i>Logout</a>
+        <a class="nav-link" href="{{ route('user.logout') }}"><i class="fi-rs-sign-out mr-10"></i>Logout</a>
     </li>
 </ul>
 </div>
@@ -207,7 +207,7 @@
                     </div>
 
                     <div class="form-group col-md-12">
-                        <label>  <span class="required">*</span></label>
+                        <label>  <span class="required"></span></label>
                         <img id="showImage" src="{{ (!empty($userData->photo)) ? url('upload/user_images/'.$userData->photo):url('upload/no_image.jpg') }}" alt="User" class="rounded-circle p-1 bg-primary" width="110">
                     </div>
 
