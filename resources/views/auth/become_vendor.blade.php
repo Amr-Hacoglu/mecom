@@ -45,7 +45,7 @@
                                         </div>
 
 
- <form method="POST" action="{{ route('register') }}">
+            <form method="POST" action="{{ route('vendor.register') }}">
             @csrf
 
 
@@ -70,11 +70,11 @@
      <div class="form-group">
          <select name="vendor_join" class="form-select mb-3" aria-label="Default select example">
             <option selected="">Open this select Join Date</option>
-            <option value="2022">2022</option>
             <option value="2023">2023</option>
             <option value="2024">2024</option>
             <option value="2025">2025</option>
             <option value="2026">2026</option>
+            <option value="2022">2027</option>
         </select>
     </div>
 
