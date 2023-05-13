@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
+use App\Http\Controllers\Backend\ProductController;
 
 use function Pest\Laravel\get;
 
@@ -124,4 +125,10 @@ Route::controller(AdminController::class)->group(function(){
     Route::post('/inactive/vendor/approve' , 'InActiveVendorApprove')->name('inactive.vendor.approve');
 });
 
+// Product All Route 
+Route::controller(ProductController::class)->group(function(){
+    Route::get('/all/product' , 'AllProduct')->name('all.product');
+    Route::get('/add/subcategory' , 'AddSubCategory')->name('add.subcategory');
 
+
+});
