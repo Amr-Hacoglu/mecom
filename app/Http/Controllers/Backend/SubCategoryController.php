@@ -50,7 +50,7 @@ class SubCategoryController extends Controller
   
   
   
-      public function UpdateSubCategory(Request $request){
+    public function UpdateSubCategory(Request $request){
   
           $subcat_id = $request->id;
   
@@ -71,7 +71,7 @@ class SubCategoryController extends Controller
       }// End Method 
   
   
-      public function DeleteSubCategory($id){
+    public function DeleteSubCategory($id){
   
           SubCategory::findOrFail($id)->delete();
   
@@ -85,5 +85,14 @@ class SubCategoryController extends Controller
   
       }// End Method 
   
+    public function GetSubCategory($category_id){
+        $subcat = SubCategory::where('category_id',$category_id)->orderBy('subcategory_name','ASC')->get();
+            return json_encode($subcat);
 
+    }// End Method 
+
+
+
+
+    
 }
