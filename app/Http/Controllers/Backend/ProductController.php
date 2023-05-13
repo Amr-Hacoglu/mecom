@@ -153,9 +153,9 @@ class ProductController extends Controller
 
 }// End Method 
 
+public function UpdateProductThambnail(){
 
-
-
+}// End Method 
 
 
 }
