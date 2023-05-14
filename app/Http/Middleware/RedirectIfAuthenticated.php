@@ -20,8 +20,19 @@ class RedirectIfAuthenticated
         $guards = empty($guards) ? [null] : $guards;
 
         foreach ($guards as $guard) {
-            if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
+            if (Auth::guard($guard)->check()) { //here when we already login with an admin for example and we will go to admin/login page it will not allow the user to go because of the user already in login state
+                
+                if(Auth::check() && Auth::user()->role == 'user'){
+                    return redirect('/dashboard');
+
+                }if(Auth::check() && Auth::user()->role == 'vendor'){
+                    return redirect('/vendor/dashboard');
+
+                }if(Auth::check() && Auth::user()->role == 'admin'){
+                    return redirect('/admin/dashboard');
+
+                } 
+
             }
         }
 
