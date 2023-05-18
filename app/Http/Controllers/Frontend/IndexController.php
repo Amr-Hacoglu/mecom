@@ -24,7 +24,10 @@ class IndexController extends Controller
         $product_size = explode(',', $size);
 
 
-        return view('frontend.product.product_details',compact('product','product_color','product_size'));
+        $multiImage = MultiImg::where('product_id',$id)->get();
+
+
+        return view('frontend.product.product_details',compact('product','product_color','product_size','multiImage'));
 
      } // End Method 
 
