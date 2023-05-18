@@ -13,6 +13,7 @@ use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Controllers\Backend\VendorProductController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\BannerController;
+use App\Http\Controllers\Frontend\IndexController;
 
 use function Pest\Laravel\get;
 
@@ -178,8 +179,11 @@ Route::middleware(['auth','role:admin'])->group(function() {
         Route::get('/edit/banner/{id}' , 'EditBanner')->name('edit.banner');
         Route::post('/update/banner' , 'UpdateBanner')->name('update.banner');
         Route::get('/delete/banner/{id}' , 'DeleteBanner')->name('delete.banner');
+    }); 
 
-    });
+}); // Admin End Middleware 
 
 
-}); //Admin End Middleware
+/// Frontend Product Details All Route 
+
+Route::get('/product/details/{id}/{slug}', [IndexController::class, 'ProductDetails']);
