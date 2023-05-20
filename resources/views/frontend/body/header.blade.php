@@ -58,7 +58,7 @@
             <div class="container">
                 <div class="header-wrap">
                     <div class="logo logo-width-1">
-                        <a href="index.html"><img src="{{ asset('frontend/assets/imgs/theme/logo.svg') }}" alt="logo" /></a>
+                        <a href="{{ url('/') }}"><img src="{{ asset('frontend/assets/imgs/theme/logo.svg') }}" alt="logo" /></a>
                     </div>
     <div class="header-right">
         <div class="search-style-2">
@@ -222,7 +222,7 @@
             <div class="container">
                 <div class="header-wrap header-space-between position-relative">
                     <div class="logo logo-width-1 d-block d-lg-none">
-                        <a href="index.html"><img src="{{ asset('frontend/assets/imgs/theme/logo.svg') }}" alt="logo" /></a>
+                        <a href="{{ url('/') }}"><img src="{{ asset('frontend/assets/imgs/theme/logo.svg') }}" alt="logo" /></a>
                     </div>
                     <div class="header-nav d-none d-lg-flex">
                         <div class="main-categori-wrap d-none d-lg-block">
@@ -278,7 +278,7 @@
                             
                             
                         <li>
-                        <a class="active" href="index.html">Home </a>
+                        <a class="active" href="{{ url('/') }}">Home </a>
                         </li>
 
                                 @php
@@ -390,7 +390,7 @@
         <div class="mobile-header-wrapper-inner">
             <div class="mobile-header-top">
                 <div class="mobile-header-logo">
-                    <a href="index.html"><img src="{{ asset('frontend/assets/imgs/theme/logo.svg') }}" alt="logo" /></a>
+                    <a href="{{ url('/') }}"><img src="{{ asset('frontend/assets/imgs/theme/logo.svg') }}" alt="logo" /></a>
                 </div>
                 <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
                     <button class="close-style search-close">
@@ -411,7 +411,7 @@
                     <nav>
                         <ul class="mobile-menu font-heading">
                             <li class="menu-item-has-children">
-                                <a href="index.html">Home</a>
+                                <a href="{{ url('/') }}">Home</a>
 
                             </li>
                             <li class="menu-item-has-children">
