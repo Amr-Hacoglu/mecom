@@ -12,7 +12,7 @@ return [
     |
     */
 
-    'calculator' => \Gloudemans\Shoppingcart\Calculation\DefaultCalculator::class,
+    'calculator' => \Gloudemans\Shoppingcart\Calculation\DefaultCalculator::class, //we add this manudally
 
     /*
     |--------------------------------------------------------------------------
@@ -61,7 +61,7 @@ return [
     | Default number format
     |--------------------------------------------------------------------------
     |
-    | This defaults will be used for the formatted numbers if you don't
+    | This defaults will be used for the formated numbers if you don't
     | set them in the method call.
     |
     */
@@ -72,7 +72,7 @@ return [
 
         'decimal_point' => '.',
 
-        'thousand_separator' => '',
+        'thousand_seperator' => '',
 
     ],
 
