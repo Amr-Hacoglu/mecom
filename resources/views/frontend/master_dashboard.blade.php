@@ -158,6 +158,7 @@
         },
         url: "/cart/data/store/"+id,
         success:function(data){
+            miniCart(); //this command use for updating the page after adding to the shopping cart
             $('#closeModal').click();
             // console.log(data)
             // Start Message 
@@ -196,7 +197,9 @@
            url: '/product/mini/cart',
            dataType: 'json',
            success:function(response){
-               // console.log(response)
+            // console.log(response)
+            $('span[id="cartSubTotal"]').text(response.cartTotal);
+            $('#cartQty').text(response.cartQty);
         var miniCart = ""
         $.each(response.carts, function(key,value){
            miniCart += ` <ul>
