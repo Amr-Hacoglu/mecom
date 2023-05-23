@@ -37,10 +37,11 @@
 
         <div class="clearfix product-price-cover">
             <div class="product-price primary-color float-left">
-            <span class="current-price text-brand" id="pprice">TL </span>
-                <span> 
-                    <span class="old-price font-md ml-15" id="oldprice">TL </span>
-                </span>
+                <span class="current-price text-brand" id="pprice"> </span>
+                <span class="current-price text-brand"> TL</span>
+
+       <span class="old-price font-md ml-15" id="oldprice">  </span>
+       <span class="old-price font-md ml-15"> TL</span><!-- TO MAKE TL on the right side -->
             </div>
         </div>
         <div class="detail-extralink mb-30">
