@@ -15,6 +15,7 @@ use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\User\WishlistController;
 
 use function Pest\Laravel\get;
 
@@ -211,3 +212,6 @@ Route::get('/minicart/product/remove/{rowId}', [CartController::class, 'RemoveMi
 
 /// Add to cart store data For Product Details Page 
 Route::post('/dcart/data/store/{id}', [CartController::class, 'AddToCartDetails']);
+
+/// Add to Wishlist 
+Route::post('/add-to-wishlist/{product_id}', [WishlistController::class, 'AddToWishList']);
