@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\CouponController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Controllers\Backend\VendorProductController;
 use App\Http\Controllers\Backend\SliderController;
@@ -185,6 +186,24 @@ Route::middleware(['auth','role:admin'])->group(function() {
         Route::post('/update/banner' , 'UpdateBanner')->name('update.banner');
         Route::get('/delete/banner/{id}' , 'DeleteBanner')->name('delete.banner');
     }); 
+
+    // Banner All Route 
+    Route::controller(CouponController::class)->group(function(){
+        Route::get('/all/coupon' , 'AllCoupon')->name('all.coupon');
+        Route::get('/add/banner' , 'AddBanner')->name('add.banner');
+        Route::post('/store/banner' , 'StoreBanner')->name('store.banner');
+        Route::get('/edit/banner/{id}' , 'EditBanner')->name('edit.banner');
+        Route::post('/update/banner' , 'UpdateBanner')->name('update.banner');
+        Route::get('/delete/banner/{id}' , 'DeleteBanner')->name('delete.banner');
+
+    }); 
+
+
+
+
+
+
+
 
 }); // Admin End Middleware 
 
