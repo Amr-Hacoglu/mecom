@@ -19,6 +19,7 @@ use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\User\WishlistController; 
 use App\Http\Controllers\User\CompareController;
+use App\Http\Controllers\User\CheckoutController;
 
 use function Pest\Laravel\get;
 
@@ -307,6 +308,12 @@ Route::middleware(['auth','role:user'])->group(function() {
         Route::get('/compare-remove/{id}' , 'CompareRemove');
    }); 
 
+    // Checkout All Route 
+    Route::controller(CheckoutController::class)->group(function(){
+        Route::get('/district-get/ajax/{division_id}' , 'DistrictGetAjax');
+        Route::get('/state-get/ajax/{district_id}' , 'StateGetAjax');
 
+
+    }); 
 
 }); // end group User middleware
