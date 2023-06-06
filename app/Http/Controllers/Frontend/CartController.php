@@ -35,6 +35,7 @@ class CartController extends Controller
                     'image' => $product->product_thambnail,
                     'color' => $request->color,
                     'size' => $request->size,
+                    'vendor_id' => $request->vendor_id,
                 ],
             ]);
 
@@ -53,6 +54,7 @@ class CartController extends Controller
                     'image' => $product->product_thambnail,
                     'color' => $request->color,
                     'size' => $request->size,
+                    'vendor_id' => $request->vendor_id,
                 ],
             ]);
 
@@ -84,6 +86,7 @@ class CartController extends Controller
                     'image' => $product->product_thambnail,
                     'color' => $request->color,
                     'size' => $request->size,
+                    'vendor' => $request->vendor,
                 ],
             ]);
 
@@ -102,6 +105,7 @@ class CartController extends Controller
                     'image' => $product->product_thambnail,
                     'color' => $request->color,
                     'size' => $request->size,
+                    'vendor' => $request->vendor,
                 ],
             ]);
 
