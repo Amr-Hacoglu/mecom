@@ -21,6 +21,7 @@ use App\Http\Controllers\User\WishlistController;
 use App\Http\Controllers\User\CompareController;
 use App\Http\Controllers\User\CheckoutController;
 use App\Http\Controllers\User\StripeController;
+use App\Http\Controllers\Backend\OrderController;
 
 use function Pest\Laravel\get;
 
@@ -238,6 +239,12 @@ Route::middleware(['auth','role:admin'])->group(function() {
     }); 
 
 
+    // Admin Order All Route 
+    Route::controller(OrderController::class)->group(function(){
+        Route::get('/pending/order' , 'PendingOrder')->name('pending.order');
+
+
+    }); 
 
 }); // Admin End Middleware 
 
