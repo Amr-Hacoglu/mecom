@@ -22,6 +22,7 @@ use App\Http\Controllers\User\CompareController;
 use App\Http\Controllers\User\CheckoutController;
 use App\Http\Controllers\User\StripeController;
 use App\Http\Controllers\Backend\OrderController;
+use App\Http\Controllers\Backend\VendorOrderController;
 
 use function Pest\Laravel\get;
 
@@ -100,7 +101,15 @@ Route::middleware(['auth','role:vendor'])->group(function(){
         Route::get('/vendor/delete/product/{id}' , 'VendorProductDelete')->name('vendor.delete.product');
         Route::get('/vendor/subcategory/ajax/{category_id}' , 'VendorGetSubCategory');
     });
-});// end group middleware
+    
+    // Brand All Route 
+    Route::controller(VendorOrderController::class)->group(function(){
+        Route::get('/vendor/order' , 'VendorOrder')->name('vendor.order');
+
+
+    });
+    
+});// end Vendor Group middleware
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->middleware(RedirectIfAuthenticated::class);
 Route::get('/vendor/login', [VendorController::class, 'VendorLogin'])->name('vendor.login')->middleware(RedirectIfAuthenticated::class);
