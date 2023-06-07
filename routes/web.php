@@ -259,6 +259,7 @@ Route::middleware(['auth','role:admin'])->group(function() {
         Route::get('/pending/confirm/{order_id}' , 'PendingToConfirm')->name('pending-confirm');
         Route::get('/confirm/processing/{order_id}' , 'ConfirmToProcess')->name('confirm-processing');
         Route::get('/processing/delivered/{order_id}' , 'ProcessToDelivered')->name('processing-delivered');
+        Route::get('/admin/invoice/download/{order_id}' , 'AdminInvoiceDownload')->name('admin.invoice.download');
     }); 
 
 }); // Admin End Middleware 
