@@ -12,6 +12,7 @@ use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\ShippingAreaController;
 use App\Http\Middleware\RedirectIfAuthenticated;
+use App\Http\Controllers\Backend\ReturnController;
 use App\Http\Controllers\Backend\VendorProductController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\BannerController;
@@ -261,6 +262,13 @@ Route::middleware(['auth','role:admin'])->group(function() {
         Route::get('/processing/delivered/{order_id}' , 'ProcessToDelivered')->name('processing-delivered');
         Route::get('/admin/invoice/download/{order_id}' , 'AdminInvoiceDownload')->name('admin.invoice.download');
     }); 
+
+    // Return Order All Route 
+    Route::controller(ReturnController::class)->group(function(){
+        Route::get('/return/request' , 'ReturnRequest')->name('return.request');
+
+
+    });
 
 }); // Admin End Middleware 
 
