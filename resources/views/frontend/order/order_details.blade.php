@@ -257,6 +257,12 @@
 
 @else 
 
+@php
+$order = App\Models\Order::where('id',$order->id)->where('return_reason','=',NULL)->first();
+@endphp
+
+@if($order)
+
 <form action="{{ route('return.order',$order->id) }}" method="post">
     @csrf
 
@@ -266,6 +272,12 @@
                 </div>
                 <button type="submit" class="btn-sm btn-danger" style="width:40%;">Order Return</button>
 </form>
+
+@else
+
+<h5><span class=" " style="color:red;">You have send return request for this product</span></h5><br><br>
+@endif
+
 @endif
 <!--  // End Return Order Option  -->
 
