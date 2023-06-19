@@ -14,6 +14,7 @@ use App\Http\Controllers\Backend\ShippingAreaController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Controllers\Backend\ReturnController;
 use App\Http\Controllers\Backend\VendorProductController;
+use App\Http\Controllers\Backend\ActiveUserController;
 use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\BannerController;
@@ -283,6 +284,15 @@ Route::middleware(['auth','role:admin'])->group(function() {
         Route::post('/search/by/year' , 'SearchByYear')->name('search-by-year');
         Route::get('/order/by/user' , 'OrderByUser')->name('order.by.user');
         Route::post('/search/by/user' , 'SearchByUser')->name('search-by-user');
+    });
+
+    // Active user and vendor All Route 
+    Route::controller(ActiveUserController::class)->group(function(){
+
+        Route::get('/all/user' , 'AllUser')->name('all-user');
+        Route::get('/all/vendor' , 'AllVendor')->name('all-vendor');
+
+
     });
 
 }); // Admin End Middleware 
