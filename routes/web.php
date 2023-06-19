@@ -277,10 +277,12 @@ Route::middleware(['auth','role:admin'])->group(function() {
     // Report All Route 
     Route::controller(ReportController::class)->group(function(){
    
-       Route::get('/report/view' , 'ReportView')->name('report.view');
-       Route::post('/search/by/date' , 'SearchByDate')->name('search-by-date');
-       Route::post('/search/by/month' , 'SearchByMonth')->name('search-by-month');
-       Route::post('/search/by/year' , 'SearchByYear')->name('search-by-year');
+        Route::get('/report/view' , 'ReportView')->name('report.view');
+        Route::post('/search/by/date' , 'SearchByDate')->name('search-by-date');
+        Route::post('/search/by/month' , 'SearchByMonth')->name('search-by-month');
+        Route::post('/search/by/year' , 'SearchByYear')->name('search-by-year');
+        Route::get('/order/by/user' , 'OrderByUser')->name('order.by.user');
+        Route::post('/search/by/user' , 'SearchByUser')->name('search-by-user');
     });
 
 }); // Admin End Middleware 
