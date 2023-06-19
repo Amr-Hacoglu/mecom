@@ -45,7 +45,8 @@
 
 
 
-<form>
+	<form method="post" action="{{ route('search-by-month')}}">
+		@csrf
 		<div class="col">
 			<div class="card">
 
@@ -59,7 +60,7 @@
 		<option value="March">March</option>
 		<option value="April">April</option>
 		<option value="May">May</option>
-		<option value="Jun">Jun</option>
+		<option value="June">June</option>
 		<option value="July">July</option>
 		<option value="August">August</option>
 		<option value="September">September</option>
@@ -91,7 +92,8 @@
 
 
 
-					<form>
+	<form method="post" action="{{ route('search-by-year')}}">
+		@csrf
 		<div class="col">
 			<div class="card">
 
