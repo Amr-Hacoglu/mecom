@@ -14,8 +14,8 @@ use App\Http\Controllers\Backend\ShippingAreaController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Controllers\Backend\ReturnController;
 use App\Http\Controllers\Backend\VendorProductController;
-use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\ActiveUserController;
+use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\BannerController;
@@ -300,8 +300,9 @@ Route::middleware(['auth','role:admin'])->group(function() {
     // Active user and vendor All Route 
     Route::controller(BlogController::class)->group(function(){
 
-        Route::get('/admin/blog/category' , 'AllUser')->name('admin.blog.category'); 
-
+        Route::get('/admin/blog/category' , 'AllBlogCateogry')->name('admin.blog.category'); 
+        Route::get('/admin/add/blog/category' , 'AddBlogCateogry')->name('add.blog.categroy');
+        Route::post('/admin/store/blog/category' , 'StoreBlogCateogry')->name('store.blog.category');
 
     });
 
