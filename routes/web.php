@@ -303,7 +303,9 @@ Route::middleware(['auth','role:admin'])->group(function() {
         Route::get('/admin/blog/category' , 'AllBlogCateogry')->name('admin.blog.category'); 
         Route::get('/admin/add/blog/category' , 'AddBlogCateogry')->name('add.blog.categroy');
         Route::post('/admin/store/blog/category' , 'StoreBlogCateogry')->name('store.blog.category');
-
+        Route::get('/admin/edit/blog/category/{id}' , 'EditBlogCateogry')->name('edit.blog.category');
+        Route::post('/admin/update/blog/category' , 'UpdateBlogCateogry')->name('update.blog.category');
+        Route::get('/admin/delete/blog/category/{id}' , 'DeleteBlogCateogry')->name('delete.blog.category');
     });
 
 
