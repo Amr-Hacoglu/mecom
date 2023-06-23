@@ -206,4 +206,12 @@ class BlogController extends Controller
         return view('frontend.blog.home_blog',compact('blogcategoryies','blogpost'));
     }// End Method 
 
+    public function BlogDetails($id,$slug){
+        $blogcategoryies = BlogCategory::latest()->get();
+        $blogdetails = BlogPost::findOrFail($id);
+        $breadcat = BlogCategory::where('id',$id)->get();
+        return view('frontend.blog.blog_details',compact('blogcategoryies','blogdetails','breadcat'));
+
+    }// End Method 
+
 }
