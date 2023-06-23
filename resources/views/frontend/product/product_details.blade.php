@@ -386,32 +386,39 @@
         @else 
         <div class="row">
             <div class="col-lg-8 col-md-12">
-                <form class="form-contact comment_form" action="#" id="commentForm">
+                <form class="form-contact comment_form" action="{{ route('store.review') }}" method="post" id="commentForm">
+                @csrf
                     <div class="row">
+                        <input type="hidden" name="product_id" value="{{ $product->id }}">
+                        @if($product->vendor_id == NULL)
+                        <input type="hidden" name="hvendor_id" value="">
+                        @else
+                        <input type="hidden" name="hvendor_id" value="{{ $product->vendor_id }}">
+                        @endif
+                        
+                        <table class="table" style=" width: 60%;">
+                            <thead>
+                                <tr>
+                                    <th class="cell-level">&nbsp;</th>
+                                    <th>1 star</th>
+                                    <th>2 star</th>
+                                    <th>3 star</th>
+                                    <th>4 star</th>
+                                    <th>5 star</th>
+                                </tr>
+                            </thead>
 
-                    <table class="table" style=" width: 60%;">
-                        <thead>
-                            <tr>
-                                <th class="cell-level">&nbsp;</th>
-                                <th>1 star</th>
-                                <th>2 star</th>
-                                <th>3 star</th>
-                                <th>4 star</th>
-                                <th>5 star</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                    <td class="cell-level">Quality</td>
-                    <td><input type="radio" name="quality" class="radio-sm" value="1"></td>
-                    <td><input type="radio" name="quality" class="radio-sm" value="2"></td>
-                    <td><input type="radio" name="quality" class="radio-sm" value="3"></td>
-                    <td><input type="radio" name="quality" class="radio-sm" value="4"></td>
-                    <td><input type="radio" name="quality" class="radio-sm" value="5"></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                            <tbody>
+                                <tr>
+                        <td class="cell-level">Quality</td>
+                        <td><input type="radio" name="quality" class="radio-sm" value="1"></td>
+                        <td><input type="radio" name="quality" class="radio-sm" value="2"></td>
+                        <td><input type="radio" name="quality" class="radio-sm" value="3"></td>
+                        <td><input type="radio" name="quality" class="radio-sm" value="4"></td>
+                        <td><input type="radio" name="quality" class="radio-sm" value="5"></td>
+                                </tr>
+                            </tbody>
+                        </table>
 
                         <div class="col-12">
                             <div class="form-group">
@@ -427,7 +434,7 @@
         </div>
 
         @endguest
-        
+
     </div>
 </div>
 </div>

@@ -15,6 +15,7 @@ use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Controllers\Backend\ReturnController;
 use App\Http\Controllers\Backend\VendorProductController;
 use App\Http\Controllers\Backend\ActiveUserController;
+use App\Http\Controllers\User\ReviewController;
 use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Backend\SliderController;
@@ -375,6 +376,13 @@ Route::controller(BlogController::class)->group(function(){
     Route::get('/blog' , 'AllBlog')->name('home.blog');  
     Route::get('/post/details/{id}/{slug}' , 'BlogDetails');
     Route::get('/post/category/{id}/{slug}' , 'BlogPostCategory');
+   });
+
+// Frontend Blog Post All Route 
+Route::controller(ReviewController::class)->group(function(){
+
+    Route::post('/store/review' , 'StoreReview')->name('store.review'); 
+   
    });
 
 /// User All Route
