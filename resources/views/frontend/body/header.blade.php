@@ -283,8 +283,8 @@
 
 
 
-               <li>
-                    <a href="page-contact.html">Contact</a>
+                <li>
+                    <a href="{{ route('home.blog') }}">Blog</a>
                 </li>
             </ul>
         </nav>

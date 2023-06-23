@@ -370,6 +370,12 @@ Route::controller(CartController::class)->group(function(){
     Route::get('/cart-increment/{rowId}' , 'CartIncrement');
 }); 
 
+// Frontend Blog Post All Route 
+Route::controller(BlogController::class)->group(function(){
+    Route::get('/blog' , 'AllBlog')->name('home.blog');  
+    
+   });
+
 /// User All Route
 Route::middleware(['auth','role:user'])->group(function() {
 
