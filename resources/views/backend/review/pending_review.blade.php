@@ -94,9 +94,7 @@
 					 </td>
 
 				<td>
-<a href="{{ route('edit.category',$item->id) }}" class="btn btn-danger">Approve</a>
-
-
+                    <a href="{{ route('review.approve',$item->id) }}" class="btn btn-danger">Approve</a>
 				</td> 
 			</tr>
 			@endforeach
