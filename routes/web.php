@@ -16,6 +16,7 @@ use App\Http\Controllers\Backend\ReturnController;
 use App\Http\Controllers\Backend\VendorProductController;
 use App\Http\Controllers\Backend\ActiveUserController;
 use App\Http\Controllers\User\ReviewController;
+use App\Http\Controllers\Backend\SiteSettingController;
 use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Backend\SliderController;
@@ -333,6 +334,13 @@ Route::middleware(['auth','role:admin'])->group(function() {
         Route::get('/review/delete/{id}' , 'ReviewDelete')->name('review.delete');
     });
 
+    // Site Setting All Route 
+    Route::controller(SiteSettingController::class)->group(function(){
+
+        Route::get('/site/setting' , 'SiteSetting')->name('site.setting');
+        Route::post('/site/setting/update' , 'SiteSettingUpdate')->name('site.setting.update');
+    
+    });    
 
 }); // Admin End Middleware 
 
