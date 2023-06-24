@@ -190,6 +190,8 @@ Route::middleware(['auth','role:admin'])->group(function() {
         Route::get('/product/inactive/{id}' , 'ProductInactive')->name('product.inactive');
         Route::get('/product/active/{id}' , 'ProductActive')->name('product.active');
         Route::get('/delete/product/{id}' , 'ProductDelete')->name('delete.product');
+        // For Product Stock
+        Route::get('/product/stock' , 'ProductStock')->name('product.stock');
     });
 
     // Slider All Route 
