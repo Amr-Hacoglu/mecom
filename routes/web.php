@@ -414,7 +414,7 @@ Route::controller(ReviewController::class)->group(function(){
 Route::controller(IndexController::class)->group(function(){
 
     Route::post('/search' , 'ProductSearch')->name('product.search'); 
-   
+    Route::post('/search-product' , 'SearchProduct');
    });
 
 /// User All Route
