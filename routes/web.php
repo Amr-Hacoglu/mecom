@@ -339,7 +339,8 @@ Route::middleware(['auth','role:admin'])->group(function() {
 
         Route::get('/site/setting' , 'SiteSetting')->name('site.setting');
         Route::post('/site/setting/update' , 'SiteSettingUpdate')->name('site.setting.update');
-    
+        Route::get('/seo/setting' , 'SeoSetting')->name('seo.setting');
+        Route::post('/seo/setting/update' , 'SeoSettingUpdate')->name('seo.setting.update');
     });    
 
 }); // Admin End Middleware 
