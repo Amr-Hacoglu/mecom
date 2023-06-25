@@ -15,6 +15,7 @@ use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Controllers\Backend\ReturnController;
 use App\Http\Controllers\Backend\VendorProductController;
 use App\Http\Controllers\Backend\ActiveUserController;
+use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\User\ReviewController;
 use App\Http\Controllers\Backend\SiteSettingController;
 use App\Http\Controllers\Backend\BlogController;
@@ -344,6 +345,13 @@ Route::middleware(['auth','role:admin'])->group(function() {
         Route::get('/seo/setting' , 'SeoSetting')->name('seo.setting');
         Route::post('/seo/setting/update' , 'SeoSettingUpdate')->name('seo.setting.update');
     });    
+
+    // Site Setting All Route 
+    Route::controller(RoleController::class)->group(function(){
+
+        Route::get('/all/permission' , 'AllPermission')->name('all.permission');
+    
+    });
 
 }); // Admin End Middleware 
 
