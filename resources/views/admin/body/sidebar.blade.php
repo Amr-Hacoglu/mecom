@@ -59,7 +59,7 @@
 				</li>
 				@endif
 
-
+				@if(Auth::user()->can('subcategory.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class="bx bx-category"></i>
@@ -67,13 +67,17 @@
 						<div class="menu-title">SubCategory</div>
 					</a>
 					<ul>
+					@if(Auth::user()->can('subcategory.list'))
 						<li> <a href="{{ route('all.subcategory') }}"><i class="bx bx-right-arrow-alt"></i>All SubCategory</a>
 						</li>
+					@endif
+					@if(Auth::user()->can('subcategory.add'))
 						<li> <a href="{{ route('add.subcategory') }}"><i class="bx bx-right-arrow-alt"></i>Add SubCategory</a>
 						</li>
-
+					@endif
 					</ul>
 				</li>
+				@endif
 				@if(Auth::user()->can('product.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
@@ -93,6 +97,7 @@
 					</ul>
 				</li>
 				@endif
+				@if(Auth::user()->can('slider.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class="bx bx-category"></i>
@@ -100,14 +105,18 @@
 						<div class="menu-title">Slider Manage</div>
 					</a>
 					<ul>
+					@if(Auth::user()->can('slider.list'))
 						<li> <a href="{{ route('all.slider') }}"><i class="bx bx-right-arrow-alt"></i>All Slider</a>
 						</li>
+					@endif
+					@if(Auth::user()->can('slider.add'))
 						<li> <a href="{{ route('add.slider') }}"><i class="bx bx-right-arrow-alt"></i>Add Slider</a>
 						</li>
-
+					@endif
 					</ul>
 				</li>
-
+				@endif
+				@if(Auth::user()->can('ads.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class="bx bx-category"></i>
@@ -115,14 +124,18 @@
 						<div class="menu-title">Banner Manage</div>
 					</a>
 					<ul>
+					@if(Auth::user()->can('ads.list'))
 						<li> <a href="{{ route('all.banner') }}"><i class="bx bx-right-arrow-alt"></i>All Banner</a>
 						</li>
+					@endif
+					@if(Auth::user()->can('ads.add'))
 						<li> <a href="{{ route('add.banner') }}"><i class="bx bx-right-arrow-alt"></i>Add Banner</a>
 						</li>
-
+					@endif
 					</ul>
 				</li>
-
+				@endif
+				@if(Auth::user()->can('coupon.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class="bx bx-category"></i>
@@ -130,14 +143,18 @@
 						<div class="menu-title">Coupon System</div>
 					</a>
 					<ul>
+					@if(Auth::user()->can('coupon.list'))
 						<li> <a href="{{ route('all.coupon') }}"><i class="bx bx-right-arrow-alt"></i>All Coupon</a>
 						</li>
+					@endif
+					@if(Auth::user()->can('coupon.add'))
 						<li> <a href="{{ route('add.coupon') }}"><i class="bx bx-right-arrow-alt"></i>Add Coupon</a>
 						</li>
-
+					@endif
 					</ul>
 				</li>
-
+				@endif
+				@if(Auth::user()->can('area.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class="bx bx-category"></i>
@@ -155,9 +172,9 @@
 
 					</ul>
 				</li>
-
+				@endif
 				<li class="menu-label">UI Elements</li>
-				
+				@if(Auth::user()->can('vendor.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class='bx bx-cart'></i>
@@ -172,7 +189,8 @@
 
 					</ul>
 				</li>
-
+				@endif
+				@if(Auth::user()->can('order.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class='bx bx-cart'></i>
@@ -192,7 +210,8 @@
 
 					</ul>
 				</li>
-
+				@endif
+				@if(Auth::user()->can('return.order.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class='bx bx-cart'></i>
@@ -206,7 +225,8 @@
 						</li> 
 					</ul>
 				</li>
-
+				@endif
+				@if(Auth::user()->can('report.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class="bx bx-category"></i>
@@ -218,7 +238,8 @@
 						<li> <a href="{{ route('order.by.user') }}"><i class="bx bx-right-arrow-alt"></i>Order By User</a></li>
 					</ul>
 				</li>
-				
+				@endif
+				@if(Auth::user()->can('user.management.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class="bx bx-category"></i>
@@ -235,7 +256,8 @@
 
 					</ul>
 				</li>
-
+				@endif
+				@if(Auth::user()->can('blog.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class="bx bx-category"></i>
@@ -251,7 +273,8 @@
 
 					</ul>
 				</li>
-
+				@endif
+				@if(Auth::user()->can('review.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class="bx bx-category"></i>
@@ -265,7 +288,8 @@
 						</li>
 					</ul>
 				</li>
-
+				@endif
+				@if(Auth::user()->can('site.menu'))		
 				<li>
 							<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class="bx bx-category"></i>
@@ -279,7 +303,8 @@
 						</li>
 					</ul>
 				</li>
-
+				@endif
+				@if(Auth::user()->can('stock.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class="bx bx-category"></i></div>
@@ -289,7 +314,8 @@
 						<li> <a href="{{ route('product.stock') }}"><i class="bx bx-right-arrow-alt"></i>Product Stock</a></li>
 					</ul>
 				</li>
-				
+				@endif
+				@if(Auth::user()->can('role.permission.menu'))
 				<li class="menu-label">Roles And Permission</li>
 				<li>
 					<a class="has-arrow" href="javascript:;">
@@ -308,7 +334,8 @@
 						</li>
 					</ul>
 				</li>
-
+				@endif				 
+				@if(Auth::user()->can('admin.user.menu'))	 
 				<li>
 					<a class="has-arrow" href="javascript:;">
 						<div class="parent-icon"><i class="bx bx-line-chart"></i>
@@ -324,7 +351,7 @@
 
 					</ul>
 				</li>
-
+				@endif
 				<li>
 				<a href=" " target="_blank">
 			
