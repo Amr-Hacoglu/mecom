@@ -22,7 +22,9 @@ class ShopController extends Controller
 
     } // End Method 
 
+    public function ShopFilter(Request $request){
 
+    }// End Method 
 
 
 

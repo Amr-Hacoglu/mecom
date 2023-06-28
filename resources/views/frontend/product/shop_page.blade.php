@@ -192,6 +192,8 @@
 
 
    <div class="sidebar-widget price_range range mb-30">
+   <form method="post" action="{{ route('shop.filter') }}">
+        @csrf
         <h5 class="section-title style-1 mb-30">Fill by price</h5>
         <div class="price-filter">
             <div class="price-filter-inner">
@@ -204,17 +206,18 @@
         </div>
         <div class="list-group">
             <div class="list-group-item mb-10 mt-10">
-                <label class="fw-900">Color</label>
+            <label class="fw-900">Category</label>
+            @foreach($categories as $category)
+            @php 
+            $products = App\Models\Product::where('category_id',$category->id)->get(); 
+            @endphp
+
                 <div class="custome-checkbox">
-                    <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox1" value="" />
-                    <label class="form-check-label" for="exampleCheckbox1"><span>Red (56)</span></label>
-                    <br />
-                    <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox2" value="" />
-                    <label class="form-check-label" for="exampleCheckbox2"><span>Green (78)</span></label>
-                    <br />
-                    <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox3" value="" />
-                    <label class="form-check-label" for="exampleCheckbox3"><span>Blue (54)</span></label>
+                    <input class="form-check-input" type="checkbox" name="category[]" id="exampleCheckbox{{ $category->id }}" value="{{ $category->category_slug }}" onchange="this.form.submit()" />
+                    <label class="form-check-label" for="exampleCheckbox{{ $category->id }}"><span>{{ $category->category_name }} ({{ count($products) }})</span></label>
+
                 </div>
+            @endforeach
                 <label class="fw-900 mt-15">Item Condition</label>
                 <div class="custome-checkbox">
                     <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox11" value="" />
@@ -230,7 +233,7 @@
         </div>
         <a href="shop-grid-right.html" class="btn btn-sm btn-default"><i class="fi-rs-filter mr-5"></i> Fillter</a>
     </div>
-
+    </form>
 
                     <!-- Product sidebar Widget -->
                     <div class="sidebar-widget product-sidebar mb-30 p-30 bg-grey border-radius-10">
