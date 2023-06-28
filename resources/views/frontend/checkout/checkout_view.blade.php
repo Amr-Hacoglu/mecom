@@ -274,6 +274,7 @@
   			$('select[name="district_id"]').on('change', function(){
   				var district_id = $(this).val();
   				if (district_id) {
+                    // function district(){
   					$.ajax({
   						url: "{{ url('/state-get/ajax') }}/"+district_id,
   						type: "GET",
@@ -286,6 +287,7 @@
   							});
   						},
   					});
+                // }
   				} else {
   					alert('danger');
   				}

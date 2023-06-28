@@ -13,7 +13,7 @@
 			<ul class="metismenu" id="menu">
 				<li>
 					<a href="{{ route('admin.dashboard') }}">
-						<div class="parent-icon"><i class='bx bx-cookie'></i>
+						<div class="parent-icon"><i class='bx bx-home-circle'></i>
 						</div>
 						<div class="menu-title">Dashboard</div>
 					</a>
@@ -23,7 +23,7 @@
 
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class='bx bx-home-circle'></i>
+						<div class="parent-icon"><i class='bx bx-cookie'></i>
 						</div>
 						<div class="menu-title">Brand</div>
 					</a>
@@ -62,7 +62,7 @@
 				@if(Auth::user()->can('subcategory.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class="bx bx-category"></i>
+						<div class="parent-icon"><i class="lni lni-codepen"></i>
 						</div>
 						<div class="menu-title">SubCategory</div>
 					</a>
@@ -81,7 +81,7 @@
 				@if(Auth::user()->can('product.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class="bx bx-category"></i>
+						<div class="parent-icon"><i class="lni lni-fresh-juice"></i>
 						</div>
 						<div class="menu-title">Product Manage</div>
 					</a>
@@ -100,7 +100,7 @@
 				@if(Auth::user()->can('slider.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class="bx bx-category"></i>
+						<div class="parent-icon"><i class="lni lni-gallery"></i>
 						</div>
 						<div class="menu-title">Slider Manage</div>
 					</a>
@@ -119,7 +119,7 @@
 				@if(Auth::user()->can('ads.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class="bx bx-category"></i>
+						<div class="parent-icon"><i class="lni lni-image"></i>
 						</div>
 						<div class="menu-title">Banner Manage</div>
 					</a>
@@ -138,7 +138,7 @@
 				@if(Auth::user()->can('coupon.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class="bx bx-category"></i>
+						<div class="parent-icon"><i class="lni lni-invention"></i>
 						</div>
 						<div class="menu-title">Coupon System</div>
 					</a>
@@ -157,7 +157,7 @@
 				@if(Auth::user()->can('area.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class="bx bx-category"></i>
+						<div class="parent-icon"><i class="lni lni-map"></i>
 						</div>
 						<div class="menu-title">Shipping Area </div>
 					</a>
@@ -177,7 +177,7 @@
 				@if(Auth::user()->can('vendor.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class='bx bx-cart'></i>
+						<div class="parent-icon"><i class='lni lni-network'></i>
 						</div>
 						<div class="menu-title">Vendor Manage </div>
 					</a>
@@ -214,7 +214,7 @@
 				@if(Auth::user()->can('return.order.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class='bx bx-cart'></i>
+						<div class="parent-icon"><i class='lni lni-paperclip'></i>
 						</div>
 						<div class="menu-title">Return Order </div>
 					</a>
@@ -229,7 +229,7 @@
 				@if(Auth::user()->can('report.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class="bx bx-category"></i>
+						<div class="parent-icon"><i class="lni lni-stats-up"></i>
 						</div>
 						<div class="menu-title">Reports Manage</div>
 					</a>
@@ -242,7 +242,7 @@
 				@if(Auth::user()->can('user.management.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class="bx bx-category"></i>
+						<div class="parent-icon"><i class="lni lni-slideshare"></i>
 						</div>
 						<div class="menu-title">User Manage</div>
 					</a>
@@ -260,7 +260,7 @@
 				@if(Auth::user()->can('blog.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class="bx bx-category"></i>
+						<div class="parent-icon"><i class="lni lni-pyramids"></i>
 						</div>
 						<div class="menu-title">Blog Manage</div>
 					</a>
@@ -277,7 +277,7 @@
 				@if(Auth::user()->can('review.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class="bx bx-category"></i>
+						<div class="parent-icon"><i class="lni lni-indent-increase"></i>
 						</div>
 						<div class="menu-title">Review Manage</div>
 					</a>
@@ -291,8 +291,8 @@
 				@endif
 				@if(Auth::user()->can('site.menu'))		
 				<li>
-							<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class="bx bx-category"></i>
+						<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class="lni lni-cog"></i>
 						</div>
 						<div class="menu-title">Setting Manage</div>
 					</a>
@@ -307,7 +307,7 @@
 				@if(Auth::user()->can('stock.menu'))
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class="bx bx-category"></i></div>
+						<div class="parent-icon"><i class="lni lni-cart-full"></i></div>
 						<div class="menu-title">Stock Manage</div>
 					</a>
 					<ul>
@@ -319,7 +319,7 @@
 				<li class="menu-label">Roles And Permission</li>
 				<li>
 					<a class="has-arrow" href="javascript:;">
-						<div class="parent-icon"><i class="bx bx-line-chart"></i>
+						<div class="parent-icon"><i class="lni lni-users"></i>
 						</div>
 						<div class="menu-title">Role & Permission</div>
 					</a>
@@ -338,7 +338,7 @@
 				@if(Auth::user()->can('admin.user.menu'))	 
 				<li>
 					<a class="has-arrow" href="javascript:;">
-						<div class="parent-icon"><i class="bx bx-line-chart"></i>
+						<div class="parent-icon"><i class="lni lni-user"></i>
 						</div>
 						<div class="menu-title">Admin Manage </div>
 					</a>
