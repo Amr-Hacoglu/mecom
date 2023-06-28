@@ -19,6 +19,7 @@ use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\User\ReviewController;
 use App\Http\Controllers\Backend\SiteSettingController;
 use App\Http\Controllers\Backend\BlogController;
+use App\Http\Controllers\Frontend\ShopController;
 use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\BannerController;
@@ -455,6 +456,12 @@ Route::controller(IndexController::class)->group(function(){
 
     Route::post('/search' , 'ProductSearch')->name('product.search'); 
     Route::post('/search-product' , 'SearchProduct');
+   });
+
+// Shop Page All Route 
+Route::controller(ShopController::class)->group(function(){
+    Route::get('/shop' , 'ShopPage')->name('shop.page');
+   
    });
 
 /// User All Route
