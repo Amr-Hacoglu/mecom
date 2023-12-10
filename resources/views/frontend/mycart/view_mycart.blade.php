@@ -30,7 +30,6 @@
                             <thead>
                                 <tr class="main-heading">
                                     <th class="custome-checkbox start pl-30">
-
                                     </th>
                                     <th scope="col" colspan="2">Product</th>
                                     <th scope="col">Unit Price</th>
@@ -65,25 +64,17 @@
         </div>
         @endif   
    </div>
-
-
                         <div class="col-lg-7">
-                             <div class="divider-2 mb-30"></div>
-
-
-
-                             <div class="border p-md-4 cart-totals ml-30">
-    <div class="table-responsive">
-        <table class="table no-border">
-            <tbody id="couponCalField"></tbody>
-        </table>
+                            <div class="divider-2 mb-30"></div>
+                                <div class="border p-md-4 cart-totals ml-30">
+                        <div class="table-responsive">
+                            <table class="table no-border">
+                                <tbody id="couponCalField"></tbody>
+                            </table>
                         </div>
                             <a href="{{ route('checkout') }}" class="btn mb-20 w-100">Proceed To CheckOut<i class="fi-rs-sign-out ml-15"></i></a>
                     </div>
                         </div>
-
-
-
                     </div>
                 </div>
 

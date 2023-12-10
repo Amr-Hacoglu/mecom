@@ -44,7 +44,7 @@
                     <h6 class="text-muted">Subtotal</h6>
                 </td>
                 <td class="cart_total_amount">
-                    <h4 class="text-brand text-end">${{ $cartTotal }}</h4>
+                    <h4 class="text-brand text-end">{{ $cartTotal }} TL</h4>
                 </td>
             </tr>
 
@@ -62,7 +62,7 @@
                     <h6 class="text-muted">Coupon Discount</h6>
                 </td>
                 <td class="cart_total_amount">
-                    <h4 class="text-brand text-end">${{ session()->get('coupon')['discount_amount'] }}</h4>
+                    <h4 class="text-brand text-end">{{ session()->get('coupon')['discount_amount'] }} TL</h4>
                 </td>
             </tr>
 

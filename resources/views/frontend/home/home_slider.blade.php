@@ -14,10 +14,6 @@
                                     {{ $item->slider_title }}
                                 </h1>
                                 <p class="mb-65">{{ $item->short_title }}</p>
-                                <form class="form-subcriber d-flex">
-                                    <input type="email" placeholder="Your emaill address" />
-                                    <button class="btn" type="submit">Subscribe</button>
-                                </form>
                             </div>
                         </div>
                         @endforeach

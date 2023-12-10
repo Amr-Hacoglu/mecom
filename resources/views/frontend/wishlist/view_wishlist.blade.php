@@ -30,7 +30,6 @@
                                     <th scope="col" colspan="2">Product</th>
                                     <th scope="col">Price</th>
                                     <th scope="col">Stock Status</th>
-
                                     <th scope="col" class="end">Remove</th>
                                 </tr>
                             </thead>

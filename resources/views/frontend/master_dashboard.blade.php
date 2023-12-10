@@ -52,7 +52,7 @@
         <div class="preloader d-flex align-items-center justify-content-center">
             <div class="preloader-inner position-relative">
                 <div class="text-center">
-                    <img src="{{ asset('frontend/assets/imgs/theme/loading.gif') }}" alt="" />
+                    <img src="{{ asset('frontend/assets/imgs/theme/Spinner-1s-200px.gif') }}" alt="" />
                 </div>
             </div>
         </div>
@@ -623,63 +623,64 @@
     </script>
 
     <!--  // Start Load MY Cart // -->
-    <script type="text/javascript">
-        function cart(){
-        $.ajax({
-            type: 'GET',
-            url: '/get-cart-product',
-            dataType: 'json',
-            success:function(response){
-                // console.log(response)
-    
-            var rows = ""
-            $.each(response.carts, function(key,value){
-            rows += `<tr class="pt-30">
-                <td class="custome-checkbox pl-30">
-                    
-                </td>
-                <td class="image product-thumbnail pt-40"><img src="/${value.options.image} " alt="#"></td>
-                <td class="product-des product-name">
-                    <h6><a class="product-name mb-10" href="/product/details/${value.product.id}/${value.product.product_slug}">${value.product.product_name} </a></h6>
-                    
-                </td>
-                <td class="price" data-title="Price">
-                    <h4 class="text-body">$${value.price} </h4>
-                </td>
-                <td class="price" data-title="Price">
-                ${value.options.color == null
-                    ? `<span>.... </span>`
-                    : `<h6 class="text-body">${value.options.color} </h6>`
-                } 
-                </td>
-                <td class="price" data-title="Price">
-                ${value.options.size == null
-                    ? `<span>.... </span>`
-                    : `<h6 class="text-body">${value.options.size} </h6>`
-                } 
-                </td>
-                <td class="text-center detail-info" data-title="Stock">
-                    <div class="detail-extralink mr-15">
-                        <div class="detail-qty border radius">
-                            <a type="submit" class="qty-down" id="${value.rowId}" onclick="cartDecrement(this.id)"><i class="fi-rs-angle-small-down"></i></a>
+<script type="text/javascript">
+    function cart(){
+    $.ajax({
+        type: 'GET',
+        url: '/get-cart-product',
+        dataType: 'json',
+        success:function(response){
+            // console.log(response)
+ 
+        var rows = ""
+        $.each(response.carts, function(key,value){
+           rows += `<tr class="pt-30">
+            <td class="custome-checkbox pl-30">
+                 
+            </td>
+            <td class="image product-thumbnail pt-40"><img src="/${value.options.image} " alt="#"></td>
+            <td class="product-des product-name">
+                <h6 class="mb-5"><a class="product-name mb-10 text-heading" href="shop-product-right.html">${value.name} </a></h6>
+                
+            </td>
+            <td class="price" data-title="Price">
+                <h4 class="text-body">${value.price} TL</h4>
+            </td>
+              <td class="price" data-title="Price">
+              ${value.options.color == null
+                ? `<span>.... </span>`
+                : `<h6 class="text-body">${value.options.color} </h6>`
+              } 
+            </td>
+               <td class="price" data-title="Price">
+              ${value.options.size == null
+                ? `<span>.... </span>`
+                : `<h6 class="text-body">${value.options.size} </h6>`
+              } 
+            </td>
+            <td class="text-center detail-info" data-title="Stock">
+                <div class="detail-extralink mr-15">
+                    <div class="detail-qty border radius">
                         
-        <input type="text" name="quantity" class="qty-val" value="${value.qty}" min="1">
-                            <a type="submit" class="qty-up" id="${value.rowId}" onclick="cartIncrement(this.id)"><i class="fi-rs-angle-small-up"></i></a>
-                        </div>
+     <a type="submit" class="qty-down" id="${value.rowId}" onclick="cartDecrement(this.id)"><i class="fi-rs-angle-small-down"></i></a>
+                       
+      <input type="text" name="quantity" class="qty-val" value="${value.qty}" min="1">
+     <a  type="submit" class="qty-up" id="${value.rowId}" onclick="cartIncrement(this.id)"><i class="fi-rs-angle-small-up"></i></a>
                     </div>
-                </td>
-                <td class="price" data-title="Price">
-                    <h4 class="text-brand">$${value.subtotal} </h4>
-                </td>
-                <td class="action text-center" data-title="Remove">
-                    <a type="submit" class="text-body"  id="${value.rowId}" onclick="cartRemove(this.id)"><i class="fi-rs-trash"></i></a></td>
-            </tr>`  
-            });
-                $('#cartPage').html(rows);
-            }
-        })
-    }
-    cart();
+                </div>
+            </td>
+            <td class="price" data-title="Price">
+                <h4 class="text-brand">${value.subtotal} TL</h4>
+            </td>
+            <td class="action text-center" data-title="Remove">
+            <a type="submit" class="text-body"  id="${value.rowId}" onclick="cartRemove(this.id)"><i class="fi-rs-trash"></i></a></td>
+        </tr>`  
+          });
+            $('#cartPage').html(rows);
+        }
+    })
+ }
+  cart();
 
     // Cart Remove Start 
     function cartRemove(id){
@@ -810,7 +811,7 @@
                         <h6 class="text-muted">Subtotal</h6>
                     </td>
                     <td class="cart_total_amount">
-                        <h4 class="text-brand text-end">$${data.total}</h4>
+                        <h4 class="text-brand text-end">${data.total} TL</h4>
                     </td>
                 </tr>
                  
@@ -819,7 +820,7 @@
                         <h6 class="text-muted">Grand Total</h6>
                     </td>
                     <td class="cart_total_amount">
-                        <h4 class="text-brand text-end">$${data.total}</h4>
+                        <h4 class="text-brand text-end">${data.total} TL</h4>
                     </td>
                 </tr>
                 ` ) 
@@ -830,7 +831,7 @@
                         <h6 class="text-muted">Subtotal</h6>
                     </td>
                     <td class="cart_total_amount">
-                        <h4 class="text-brand text-end">$${data.subtotal}</h4>
+                        <h4 class="text-brand text-end">${data.subtotal} TL</h4>
                     </td>
                 </tr>
                  

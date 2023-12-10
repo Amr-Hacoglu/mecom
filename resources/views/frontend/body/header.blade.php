@@ -10,9 +10,9 @@
                         <div class="header-info">
                             <ul>
 
-                                <li><a href="page-account.html">My Cart</a></li>
-                                <li><a href="shop-wishlist.html">Checkout</a></li>
-                                <li><a href="shop-order.html">Order Tracking</a></li>
+                                <li><a href="{{ route('mycart') }}">My Cart</a></li>
+                                <li><a href="{{ route('checkout') }}">Checkout</a></li>
+                                <li><a href="{{ route('user.track.order') }}">Order Tracking</a></li>
                             </ul>
                         </div>
                     </div>
@@ -45,8 +45,10 @@
                         </li>
                     </ul>
                 </li>
-
-                 <li>Need help? Call Us: <strong class="text-brand"> + 1800 900</strong></li>
+                @php
+                    $setting = App\Models\SiteSetting::find(1);
+                @endphp
+                 <li>Need help? Call Us: <strong class="text-brand"> {{ $setting->support_phone }}</strong></li>
 
                             </ul>
                         </div>
@@ -69,45 +71,17 @@
         <div class="search-style-2">
             <form action="{{ route('product.search') }}" method="post">
                 @csrf
-                <select class="select-active">
-                    <option>All Categories</option>
-                    <option>Milks and Dairies</option>
-                    <option>Wines & Alcohol</option>
-                    <option>Clothing & Beauty</option>
-                    <option>Pet Foods & Toy</option>
-                    <option>Fast food</option>
-                    <option>Baking material</option>
-                    <option>Vegetables</option>
-                    <option>Fresh Seafood</option>
-                    <option>Noodles & Rice</option>
-                    <option>Ice cream</option>
-                </select>
+                <style>
+                    .header-style-1 .search-style-2 form input {
+                        max-width: 690px;
+                    }
+                </style>
                     <input onfocus="search_result_show()" onblur="search_result_hide()" name="search" id="search" placeholder="Search for items..." />
                 <div id="searchProducts"></div>
             </form>
         </div>
         <div class="header-action-right">
             <div class="header-action-2">
-                <div class="search-location">
-                    <form action="#">
-                        <select class="select-active">
-                            <option>Your Location</option>
-                            <option>Alabama</option>
-                            <option>Alaska</option>
-                            <option>Arizona</option>
-                            <option>Delaware</option>
-                            <option>Florida</option>
-                            <option>Georgia</option>
-                            <option>Hawaii</option>
-                            <option>Indiana</option>
-                            <option>Maryland</option>
-                            <option>Nevada</option>
-                            <option>New Jersey</option>
-                            <option>New Mexico</option>
-                            <option>New York</option>
-                        </select>
-                    </form>
-                </div>
 
                 <div class="header-action-icon-2">
                     <a href="{{ route('compare') }}">
@@ -124,7 +98,7 @@
                     <a href="{{ route('wishlist') }}"><span class="lable">Wishlist</span></a>
                 </div>
                 <div class="header-action-icon-2">
-                    <a class="mini-cart-icon" href="shop-cart.html">
+                    <a class="mini-cart-icon" href="{{ route('mycart') }}">
                         <img alt="Nest" src="{{ asset('frontend/assets/imgs/theme/icons/icon-cart.svg') }}" />
                         <span class="pro-count blue" id="cartQty">0</span>
                     </a>
@@ -140,18 +114,18 @@
                                 <h4>Total <span id="cartSubTotal"> </span></h4>
                             </div>
                             <div class="shopping-cart-button">
-                                <a href="shop-cart.html" class="outline">View cart</a>
-                                <a href="shop-checkout.html">Checkout</a>
+                                <a href="{{ route('mycart') }}" class="outline">View cart</a>
+                                <a href="{{ route('checkout') }}">Checkout</a>
                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="header-action-icon-2">
-                                    <a href="page-account.html">
+                                    <a href="{{ route('dashboard') }}">
                                         <img class="svgInject" alt="Nest" src="{{ asset('frontend/assets/imgs/theme/icons/icon-user.svg') }}" />
                                     </a>
                                     @auth
-                                    <a href="page-account.html"><span class="lable ml-0">Account</span></a>
+                                    <a href="{{ route('dashboard') }}"><span class="lable ml-0">Account</span></a>
                                     <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
                                     <ul>
                                         <li>
@@ -209,7 +183,7 @@
             <div class="container">
                 <div class="header-wrap header-space-between position-relative">
                     <div class="logo logo-width-1 d-block d-lg-none">
-                        <a href="{{ url('/') }}"><img src="{{ asset('frontend/assets/imgs/theme/logo.svg') }}" alt="logo" /></a>
+                        <a href="{{ url('/') }}"><img src="{{ asset($setting->logo) }}" alt="logo" /></a>
                     </div>
                     <div class="header-nav d-none d-lg-flex">
                         <div class="main-categori-wrap d-none d-lg-block">
@@ -362,8 +336,8 @@
                         <h4>Total <span>$383.00</span></h4>
                     </div>
                     <div class="shopping-cart-button">
-                        <a href="shop-cart.html">View cart</a>
-                        <a href="shop-checkout.html">Checkout</a>
+                        <a href="{{ route('mycart') }}">View cart</a>
+                        <a href="{{ route('checkout') }}">Checkout</a>
                     </div>
                 </div>
             </div>
